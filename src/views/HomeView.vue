@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { defineProps } from 'vue';
     import { useRoute, useRouter } from 'vue-router';
-    import DashBoard from '../components/DashBoard.vue'
+    import DashboardComponent from '../components/DashboardComponent.vue'
     import { getLastFMSession } from '@/api/lastFmApi';
 
     const props = defineProps({
@@ -28,6 +28,6 @@
 
 <template>
     <main>
-        <DashBoard :user="props.lastfmUser" :years="props.years" />
+        <DashboardComponent :user="props.lastfmUser" :years="props.years" />
     </main>
 </template>
