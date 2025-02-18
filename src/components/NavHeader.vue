@@ -33,7 +33,7 @@
   <header
     class="shadow-md shadow-stone-600 flex justify-between items-center h-14 bg-gradient-to-l from-transparent to-red-950">
     <span class="wrapper flex-1 font-sans text-xl ml-3">
-      <strong>LastFm</strong> Mene Dashboard
+      <strong>LastFm</strong> Mene Dashboard!
     </span>
     <div class="user-data float-right">
       <div v-if="loading === true" class="mr-8">
