@@ -1,0 +1,15 @@
+.apexcharts-menu-open {
+  background-color: var(--vt-c-divider-dark-1) !important;
+}
+
+.apexcharts-tooltip-text {
+  margin-left: 10px;
+}
+
+.apexcharts-tooltip {
+    background-color: black !important;
+}
+
+.apexcharts-tooltip-title {
+  background-color: var(--vt-c-divider-dark-1) !important;
+}
