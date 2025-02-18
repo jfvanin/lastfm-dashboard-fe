@@ -7,9 +7,9 @@
   import { useToast } from 'vue-toast-notification';
   import 'vue-toast-notification/dist/theme-sugar.css';
 
-  const callBackUrl = import.meta.env.VITE_LASTFM_API_KEY;
-  const lastFMKey = import.meta.env.VITE_LASTFM_CALLBACK_URL;
-  const authLoginUrl = `http://www.last.fm/api/auth/?api_key=${lastFMKey}&cb=${callBackUrl}`;
+  const lastFMKey = import.meta.env.VITE_LASTFM_API_KEY;
+  const callBackUrl = import.meta.env.VITE_LASTFM_CALLBACK_URL;
+  const authLoginUrl = `https://www.last.fm/api/auth/?api_key=${lastFMKey}&cb=${callBackUrl}`;
 
   const props = defineProps({
     user: String,

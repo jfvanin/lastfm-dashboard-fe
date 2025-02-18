@@ -147,11 +147,6 @@
         },
         chart: {
           type: 'bar',
-          events: {
-            click: function (chart, w, e) {
-              // console.log(chart, w, e)
-            }
-          }
         },
         plotOptions: {
           bar: {
@@ -199,11 +194,6 @@
         },
         chart: {
           type: 'bar',
-          events: {
-            click: function (chart, w, e) {
-              // console.log(chart, w, e)
-            }
-          }
         },
         plotOptions: {
           bar: {
@@ -288,8 +278,8 @@
             data: decadesData[decade]
           }));
         } else {
-          state.decadesChart.chartOptions.xaxis.categories = response.reverse().map((x: { _id: string, count: number }) => x._id);
-          state.decadesChart.series[0].data = response.reverse().map((x: { _id: string, count: number }) => x.count);
+          state.decadesChart.chartOptions.xaxis.categories = response.map((x: { _id: string, count: number }) => x._id);
+          state.decadesChart.series[0].data = response.map((x: { _id: string, count: number }) => x.count);
         }
       } catch (error) {
         console.error('Error loading decade statistics:', error);
@@ -348,7 +338,7 @@
 
   const fetchLastFmData = async () => {
     const lastfmUser = props.user;
-    if (lastfmUser && !state.year) {
+    if (lastfmUser && state.selectedYear === -1) {
       try {
         state.topArtists = (await getTopArtist(String(lastfmUser)));
         state.topAlbums = (await getTopAlbums(String(lastfmUser)));

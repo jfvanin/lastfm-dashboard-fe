@@ -61,7 +61,10 @@ export interface TopTracksResponse {
 }
 
 export const apiClient = axios.create({
-    baseURL: 'http://ws.audioscrobbler.com/2.0',
+    baseURL: 'https://ws.audioscrobbler.com/2.0',
+    headers: {
+        'User-Agent': import.meta.env.VITE_USER_AGENT + ' (jozeh5@gmail.com)'
+    }
 });
 
 export const get = async (endpoint: string, params: { [key: string]: string } = {}, signatureRequired = true) => {
