@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
   import { faXmark } from '@fortawesome/free-solid-svg-icons';
+  import { faGithub } from '@fortawesome/free-brands-svg-icons';
   import { defineProps, defineEmits, ref, watch } from 'vue';
 
   const props = defineProps({
@@ -16,9 +17,11 @@
   }>();
 
   const updateUser = () => {
-    loading.value = true;
-    emit('setUser', userInput.value);
-    userInput.value = '';
+    if (userInput.value) {
+      loading.value = true;
+      emit('setUser', userInput.value);
+      userInput.value = '';
+    }
   };
 
   watch(() => [props.user], () => {
@@ -35,6 +38,12 @@
     <span class="wrapper flex-1 font-sans text-xl ml-3">
       <strong>LastFm</strong> Mene Dashboard
     </span>
+    <div class="float-right mr-3 mt-1">
+      <a href="https://github.com/jfvanin/lastfm-dashboard-fe" target="_blank" class="text-white" alt="GitHub"
+        title="GitHub">
+        <FontAwesomeIcon :icon="faGithub" class="text-2xl" />
+      </a>
+    </div>
     <div class="user-data float-right">
       <div v-if="loading === true" class="mr-8">
         <span>Setting user...</span>
