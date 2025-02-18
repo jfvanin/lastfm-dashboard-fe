@@ -263,6 +263,9 @@
           state.fullDecadesChart.chartOptions.xaxis.categories = response.map((x: { _id: string }) => x._id);
           const decadesData: { [key: string]: number[] } = {};
           decadesData['1950s'] = Array(state.fullDecadesChart.chartOptions.xaxis.categories.length).fill(0);
+          decadesData['1960s'] = [...decadesData['1950s']];
+          decadesData['1970s'] = [...decadesData['1950s']];
+          decadesData['1980s'] = [...decadesData['1950s']];
 
           response.forEach((yearData: { _id: string, decades: { decade: string, count: number }[] }, index: number) => {
             yearData.decades.forEach((decadeDetails: { decade: string, count: number }) => {
