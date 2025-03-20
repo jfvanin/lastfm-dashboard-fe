@@ -7,11 +7,17 @@
     const props = defineProps({
         lastfmUser: String,
         years: Array<number>,
+        theme: String,
     });
 
     const emit = defineEmits<{
         (event: 'handleLastFmAuth', sessionToken: string): void,
+        (event: 'setTheme', theme: string): void,
     }>();
+
+    const setTheme = (theme: string) => {
+        emit('setTheme', theme);
+    };
 
     // LastFM Auth procedure
     const route = useRoute();
@@ -28,6 +34,6 @@
 
 <template>
     <main>
-        <DashboardComponent :user="props.lastfmUser" :years="props.years" />
+        <DashboardComponent :user="props.lastfmUser" :years="props.years" :theme="props.theme" @setTheme="setTheme" />
     </main>
 </template>

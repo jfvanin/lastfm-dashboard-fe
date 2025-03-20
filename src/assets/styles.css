@@ -13,3 +13,9 @@
 .apexcharts-tooltip-title {
   background-color: var(--vt-c-divider-dark-1) !important;
 }
+
+.active-tab {
+  background-color: var( --vt-c-divider-dark-2);
+  opacity: 1;
+  color: white;
+}
