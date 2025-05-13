@@ -619,7 +619,10 @@
       </button>
       <button v-for="year in state.years" class="px-4 py-2 min-w-3 break-all" :key="year"
         @click="state.selectedYear = year" :class="{ 'active-tab': state.selectedYear === year }">
-        {{ year }}
+        <span
+          class="lg:text-base lg:rotate-0 text-xs rotate-90 inline-block transform origin-center transition-all duration-200">
+          {{ year }}
+        </span>
       </button>
       <button class="px-4 py-2 min-w-3 break-all" @click="addYear">
         <strong>+</strong>
@@ -640,7 +643,7 @@
         <span class="text-xl">Top Albums</span>
         <ul class="flex flex-wrap my-2">
           <li v-for="album in state.topAlbums.topalbums.album" :key="album.name"
-            class="flex-1 relative min-w-20 basis-24 max-w-44">
+            class="flex-1 relative min-w-18 basis-24 max-w-44">
             <img :src="album.image[3]['#text']" alt="album" class="album-thumb w-full border-l-2 border-slate-950" />
             <div class="h-14 absolute -mt-14 block w-full bg-gradient-to-t to-transparent from-black">
               <span
@@ -654,7 +657,7 @@
         <span class="text-xl">Top Artists</span>
         <ul class="flex flex-wrap my-2">
           <li v-for="artist in state.topArtists.topartists.artist" :key="artist.name"
-            class="flex-1 relative min-w-20 basis-24 max-w-44">
+            class="flex-1 relative min-w-18 basis-24 max-w-44">
             <img :src="artist.image[3]['#text']" alt="album" class="album-thumb w-full border-l-2 border-slate-950" />
             <div class="h-14 absolute -mt-14 block w-full bg-gradient-to-t to-transparent from-black">
               <span
@@ -668,12 +671,12 @@
       </div>
     </div>
     <div v-else>
-      <div class="flex ml-3 mr-4">
-        <apexchart class="flex-1" ref="chartRef" type="bar" :options="state.decadesChart.chartOptions"
+      <div class="flex flex-wrap ml-3 mr-4">
+        <apexchart class="flex-1 min-w-84" ref="chartRef" type="bar" :options="state.decadesChart.chartOptions"
           :series="state.decadesChart.series"></apexchart>
-        <apexchart class="flex-1" ref="chartRef2" type="bar" :options="state.originChart.chartOptions"
+        <apexchart class="flex-1 min-w-84" ref="chartRef2" type="bar" :options="state.originChart.chartOptions"
           :series="state.originChart.series"></apexchart>
-        <apexchart class="flex-1" ref="chartRef3" type="treemap" :options="state.tagChart.chartOptions"
+        <apexchart class="flex-1 min-w-84" ref="chartRef3" type="treemap" :options="state.tagChart.chartOptions"
           :series="state.tagChart.series"></apexchart>
       </div>
       <div id="topList" class="flex flex-col m-6 ml-3 mr-4">
