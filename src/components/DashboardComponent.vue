@@ -617,8 +617,8 @@
         :class="{ 'active-tab': state.selectedYear === -1 }">
         All years
       </button>
-      <button v-for="year in state.years" class="px-4 py-2 min-w-3 break-all" :key="year"
-        @click="state.selectedYear = year" :class="{ 'active-tab': state.selectedYear === year }">
+      <button v-for="year in state.years" class="px-4 py-2 min-w-3" :key="year" @click="state.selectedYear = year"
+        :class="{ 'active-tab': state.selectedYear === year }">
         <span
           class="lg:text-base lg:rotate-0 text-xs rotate-90 inline-block transform origin-center transition-all duration-200">
           {{ year }}
@@ -672,11 +672,11 @@
     </div>
     <div v-else>
       <div class="flex flex-wrap ml-3 mr-4">
-        <apexchart class="flex-1 min-w-84" ref="chartRef" type="bar" :options="state.decadesChart.chartOptions"
+        <apexchart class="flex-1 min-w-80" ref="chartRef" type="bar" :options="state.decadesChart.chartOptions"
           :series="state.decadesChart.series"></apexchart>
-        <apexchart class="flex-1 min-w-84" ref="chartRef2" type="bar" :options="state.originChart.chartOptions"
+        <apexchart class="flex-1 min-w-80" ref="chartRef2" type="bar" :options="state.originChart.chartOptions"
           :series="state.originChart.series"></apexchart>
-        <apexchart class="flex-1 min-w-84" ref="chartRef3" type="treemap" :options="state.tagChart.chartOptions"
+        <apexchart class="flex-1 min-w-80" ref="chartRef3" type="treemap" :options="state.tagChart.chartOptions"
           :series="state.tagChart.series"></apexchart>
       </div>
       <div id="topList" class="flex flex-col m-6 ml-3 mr-4">
