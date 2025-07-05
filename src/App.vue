@@ -28,10 +28,12 @@
         localStorage.removeItem('lastfm-user');
         localStorage.removeItem('lastfm-years');
         localStorage.removeItem('lastfm-session');
+        localStorage.removeItem('discogs-user');
         state.lastfmUser = '';
         state.years = [];
         state.lastFMSession = '';
         state.theme = '';
+        state.discogsUser = '';
     }
 
     const handleSetDiscogsUser = (user: string) => {

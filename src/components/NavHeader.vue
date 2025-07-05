@@ -53,7 +53,7 @@
 
 <template>
   <header
-    class="shadow-md shadow-stone-600 flex justify-between items-center h-14 bg-gradient-to-l from-transparent to-red-950">
+    class="shadow-md shadow-stone-600 flex justify-between items-center h-10 bg-gradient-to-l from-transparent to-red-950">
     <span class="wrapper flex-1 font-sans text-xl ml-3">
       <strong>LastFm</strong> Mene Dashboard
     </span>
@@ -80,7 +80,7 @@
       <div v-else class="mr-8">
         <form @submit.prevent="updateUser">
           <input v-model="userInput" placeholder="Enter Username" class="w-32" />
-          <button type="submit" class="pl-1">Set LastFM User</button>
+          <button type="submit" class="pl-2">Set LastFM User</button>
         </form>
       </div>
     </div>

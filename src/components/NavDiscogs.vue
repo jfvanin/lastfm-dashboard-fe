@@ -83,13 +83,20 @@
     if (props.user) {
       await fetchUserLibrary();
     } else {
+      state.userLibrary = [];
+      isLastFmLogged.value = false;
       console.log('User is not set');
     }
   });
 
   watch(() => [props.user, props.lastfmAuth], () => {
-    fetchUserLibrary();
-    isLastFmLogged.value = props.lastfmAuth && props.lastfmAuth.length > 0;
+    if (props.user) {
+      fetchUserLibrary();
+      isLastFmLogged.value = props.lastfmAuth && props.lastfmAuth.length > 0;
+    } else {
+      state.userLibrary = [];
+      isLastFmLogged.value = false;
+    }
   });
 
   const footerDisplay = computed(() => {
@@ -116,7 +123,7 @@
     isExpanded.value = !isExpanded.value;
   };
 
-</script> ds
+</script>
 
 <template>
   <footer>
